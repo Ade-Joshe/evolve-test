@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+.App * {
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -13,7 +13,7 @@
   }
 }
 
-.App-header {
+.App-body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,6 +22,37 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 100%;
+}
+
+.App-body form {
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.App-body form input {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.App-body form button {
+  cursor: pointer;
+  background-color: blueviolet;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: white;
+  width: 100%;
+  border-radius: 5px;
+  border: 0.3px solid darkgray;
+}
+
+.App-body form button:hover {
+  background-color: rgba(137, 43, 226, 0.676);
 }
 
 .App-link {
@@ -32,6 +63,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

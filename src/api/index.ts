@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://6297078214e756fe3b273ab8.mockapi.io/bnpl/api/'
+    baseURL: `https://${process.env.REACT_APP_ENTERPRISE_TOKEN}.${process.env.REACT_APP_BASE_URL}`
 });
 
 export default api;

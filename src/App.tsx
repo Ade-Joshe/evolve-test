@@ -1,53 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { DebitMandateForm } from './lib/components/hooks/mandate/component';
-import { useMandate, useUser } from './lib/components';
+import { AppRouter } from './routes';
+import { DebitMandateForm, useMandate } from './components';
 
 function App() {
-
-  const { userForm: { handleChange, handleSubmit, values } } = useUser();
-  const { fields, initMandate } = useMandate();
-
-  useEffect(() => {
-    initMandate();
-  }, []);
-
-  const onSuccess = (response: any) => {
-    console.log({ response }); // callbacks for success
-  }
-
   return (
     <>
-      {fields.keys.length ? <DebitMandateForm fields={fields} callback={onSuccess} /> : null}
-
-      <div className="App">
-        <header className="App-header">
-          <form onSubmit={handleSubmit}>
-            <label>
-              First Name:
-              <input type="text" name="firstName" value={values.firstName} onChange={handleChange} />
-            </label>
-            <label>
-              Age:
-              <input type="number" name="age" value={values.age} onChange={handleChange} />
-            </label>
-            <label>
-              Country:
-              <input type="text" name="country" value={values.country} onChange={handleChange} />
-            </label>
-            <label>
-              Last Name:
-              <input type="text" name="lastName" value={values.lastName} onChange={handleChange} />
-            </label>
-            <label>
-              State:
-              <input type="text" name="state" value={values.state} onChange={handleChange} />
-            </label>
-
-            <button type='submit'>Submit</button>
-          </form>
-        </header>
-      </div>
+      <DebitMandateForm />
+      <AppRouter />
     </>
   );
 }
