@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import api from '../../../api';
 import { generateFields } from '../../../util';
 import { IField } from "./interface";
+export * from "./component";
 
 export const useMandate = () => {
 
@@ -19,14 +20,6 @@ export const useMandate = () => {
                 return fields;
             });
     }, []);
-
-    // const renderForm = useCallback(() => {
-    //     let root = document.getElementById('mandate-root');
-    //     if (root) {
-    //          root?.appendChild(DebitMandateForm);
-    //          ReactDOM.createPortal(DebitMandateForm(), root);
-    //     }
-    // }, [fields]);
 
     const initMandate = useCallback(() => {
         return getMandateFields();

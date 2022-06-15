@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { useProfile } from './components';
-import { DebitMandateForm } from './components/hooks/mandate/component';
+import { DebitMandateForm } from './lib/components/hooks/mandate/component';
+import { useMandate, useUser } from './lib/components';
 
 function App() {
 
-  const { user, mandate } = useProfile();
-  const { userForm: { handleChange, handleSubmit, values } } = user;
-  const { fields, initMandate } = mandate;
+  const { userForm: { handleChange, handleSubmit, values } } = useUser();
+  const { fields, initMandate } = useMandate();
 
   useEffect(() => {
     initMandate();
@@ -20,6 +19,7 @@ function App() {
   return (
     <>
       {fields.keys.length ? <DebitMandateForm fields={fields} callback={onSuccess} /> : null}
+
       <div className="App">
         <header className="App-header">
           <form onSubmit={handleSubmit}>
@@ -48,7 +48,6 @@ function App() {
           </form>
         </header>
       </div>
-
     </>
   );
 }
