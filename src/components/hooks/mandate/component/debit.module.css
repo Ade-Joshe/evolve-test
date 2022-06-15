@@ -1,0 +1,49 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: white;
+}
+
+.overlay * {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: all 0.3s ease-in;
+}
+
+.overlay form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+.overlay div {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.overlay input {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 0.3px solid darkgray;
+}
+
+.overlay button {
+    cursor: pointer;
+    background-color: blueviolet;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 5px;
+    border: 0.3px solid darkgray;
+}
+
+.overlay button:hover {
+    background-color: rgba(137, 43, 226, 0.676);
+}
